@@ -1,4 +1,4 @@
-#gblog 
+# gblog 
 
 基于Go语言和beego框架的博客系统
 
@@ -7,14 +7,14 @@
 
 [http://www.spxcds.com/](http://www.spxcds.com/)
 
-##编译安装说明：
+## 编译安装说明：
 
 设置GOPATH(安装目录)
 
-	$ export GOPATH=/path/to/goblog
-	$ cd /path/to/goblog
+	$ export GOPATH=/path/to/gblog
+	$ cd /path/to/gblog
 
-获取源代码，下载完成后会自动编译为goblog可执行文件
+获取源代码，下载完成后会自动编译为gblog可执行文件
 	
 	$ go get -u github.com/spxcds/gblog
 
@@ -30,18 +30,18 @@
 	dbport = 3306
 	dbuser = root
 	dbpassword = 123456
-	dbname = goblog
+	dbname = gblog
 	dbprefix = tb_
 
 导入MySQL
 
-	$ mysql -u username -p -D goblog < goblog.sql
+	$ mysql -u username -p -D gblog < gblog.sql
 
 运行
 	
 	$ ./gblog
 	或
-	$ nohup ./gblog 2>&1 > goblog.log &
+	$ nohup ./gblog 2>&1 > gblog.log &
 	设为后台运行
 
 访问： 
