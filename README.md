@@ -3,55 +3,51 @@
 基于Go语言和beego框架的博客系统
 
 
-演示地址：
+### 演示地址
+[演示地址](http://www.spxcds.com)
 
-[http://www.spxcds.com/](http://www.spxcds.com/)
+### 编译安装说明
 
-## 编译安装说明：
+First of ALL: 配置好你的Golang环境,包括$GOPATH设置等等
 
-设置GOPATH(安装目录)
+下载源码, 会自动编译成可执行文件`$GOPATH/bin/gblog`
+```
+go get -u github.com/spxcds/gblog
+```
+新建一个文件夹, 把需要的文件拷到该文件夹下
+```
+mkdir myblog && cd myblog
+cp $GOPATH/bin/gblog .
+cp -r $GOPATH/src/github.com/spxcds/gblog/conf .
+```
+该文件夹结构如下
+```
+myblog/
+├── conf
+│   └── app.conf
+└── gblog
+```
 
-	$ export GOPATH=/path/to/gblog
-	$ cd /path/to/gblog
+修改配置文件
+```
+vim ./conf/app.conf
 
-获取源代码，下载完成后会自动编译为gblog可执行文件
-	
-	$ go get -u github.com/spxcds/gblog
-
-修改数据库配置
-	
-	$ cd src
-	$ vim github.com/spxcds/gblog/conf/app.conf
-	
-	appname = gblog
-	httpport = 80
-	runmode = dev
-	dbhost = localhost 
-	dbport = 3306
-	dbuser = root
-	dbpassword = 123456
-	dbname = gblog
-	dbprefix = tb_
+```
 
 导入MySQL
-
-	$ mysql -u username -p -D gblog < gblog.sql
+```
+mysql -u username -p -D gblog < gblog.sql
+````
 
 运行
-	
-	$ ./gblog
-	或
-	$ nohup ./gblog 2>&1 > gblog.log &
-	设为后台运行
+```
+./gblog
+```
 
-访问： 
-
-http://localhost
-
-后台地址：
-
-http://localhost:80/admin
-
-帐号：admin
-密码：admin888
-
+### 访问地址
+```
+http://localhost:port
+http://localhost:port/admin
+username: admin
+password: admin
+```
